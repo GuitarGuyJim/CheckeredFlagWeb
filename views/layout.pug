@@ -1,7 +1,53 @@
+//
+// This is the base pug file used in all the pug files for the site.  It
+// contains the html head section and defines the banner displayed at the top
+// of all the pages.  The block content defined at the end is replaced by
+// the pug for specific pages.
+//
+
 doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='style.css')
   body
+
+    header(class='banner')
+      div(id='bannerimage')
+
+      div(class="topnav")
+        a(style="font-size:24px;", href='/') Checkered Flag
+        //   a(class="login", href='/calendar') LOG IN
+        button(onclick="document.getElementById('id01').style.display='block'") LOG IN
+
+      div(id="id01", class="modal")
+  
+        form(class="modal-content animate", action="/users" method="post")
+          div(class="imgcontainer")
+            span(onclick="document.getElementById('id01').style.display='none'", class="close", title="Close Modal") &times
+            img(src="banner_flags.png", alt="Avatar", class="avatar")
+
+          div(class="container")
+            label(for="uname") Username
+            input(type="text", placeholder="Enter Username", name="uname", required)
+
+            label(for="psw") Password
+            input(type="password", placeholder="Enter Password", name="psw", required)
+        
+            button(type="submit") Login
+      
+            label(input type="checkbox", checked="checked", name="remember") Remember me
+      
+          div(class="container", style="background-color:#f1f1f1")
+            button(type="button", onclick="document.getElementById('id01').style.display='none'", class="cancelbtn") Cancel
+            //span(class="psw")Forgot <a href="#">password?</a></span>
+
+          // At the bottom of the form provide a link to sign up.  This will
+          // take the user to the Sign Up page.  The link to sign up sends a
+          // GET to the /users route.
+          div(class="container")
+            label(class="signup-label") New to Checkered Flag?   
+            a(class="signup-label" href="/users") Sign Up
+
+
     block content

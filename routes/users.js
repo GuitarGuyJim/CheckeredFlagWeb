@@ -1,9 +1,12 @@
 var express = require('express');
 var router = express.Router();
+var eventController = require('../controllers/user');
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+
+
+/* On POST events, pass control to the checkUserCredentials function */
+router.post('/', eventController.checkUserCredentials);
+
+router.get('/', eventController.signupNewUser);
 
 module.exports = router;

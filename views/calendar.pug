@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  div(class='banner')
+    
+    header(class="header")
+    H1= title
+
+    ol
+      each val in data
+        if val.completed
+          li= val.name + ' ' + 'Completed'
+        else
+          li= val.name + ' ' + 'Upcoming'
+        
