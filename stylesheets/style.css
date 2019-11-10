@@ -130,8 +130,10 @@ input[type=text], input[type=password] {
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  /*border: 1px solid #ccc;*/
   box-sizing: border-box;
+  border: 2px solid rgb(138, 157, 192);
+  border-radius: 4px;
 }
 
 /* Set a style for all buttons */
@@ -252,3 +254,19 @@ span.psw {
   to {transform: scale(1)}
 }
 
+
+/* Signup Form */
+.signup-form {
+  background-color: #fefefe;
+  margin: 15px auto; /* 15% from the top and centered */
+  border: 1px solid #888;
+  width: 30%; /* Could be more or less, depending on screen size */
+  border: none;
+}
+
+/*
+.signup-form input[type=text] input[type=password] {
+  border: 2px solid rgb(138, 157, 192);
+  border-radius: 4px;
+}
+*/

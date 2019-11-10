@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  div(class='banner')
+    
+  header(class="header")
+    H1='Signup'
+
+    form(class="signup-form" action="/accounts" method="post")
+    
+      div(class="container")
+        label(for="uname") email
+        input(type="text", placeholder="Enter your email address", name="uname", required)
+    
+        label(for="fname") First Name
+        input(type="text", placehoder="Enter your first name", name="fname", required)
+    
+        label(for="lname") Last Name
+        input(type="text", placeholder="Enter your last name", name="lname", required)
+    
+        label(for="psw") Password
+        input(type="password", placeholder="Enter Password", name="psw", required)
+    
+        label(for="psw2") Confirm Password
+        input(type="password", placeholder="Confirm Password", name="psw2", required)
+        
+        button(type="submit") Create Account
+        
